@@ -1,0 +1,143 @@
+.homebackground {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./assets/image/home/BACK.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerlayout {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homecenter {
+        background-image: url('./assets/image/home/self.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        position: fixed;
+        z-index: 9;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+}
+
+.homepath {
+        background-image: url('./assets/image/home/path.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        position: fixed;
+        z-index: 30;
+}
+
+.horizontal-line {
+    height: 0.3px; /* ✅ 선 두께 */
+    background-color: black; /* ✅ 선 색상 */
+    position: absolute; /* ✅ 위치 조정 */
+    transform: scaleY(0.3);
+    position: fixed;
+    z-index:9;
+}
+
+.vertical-line {
+    width: 1px; /* ✅ 세로선 두께 */
+    height: 100vh; /* ✅ 화면 높이의 90% */
+    background-color: black; /* ✅ 선 색상 */
+    position: absolute; /* ✅ 위치 조정 */
+    transform: scaleX(0.3);
+    z-index:9;
+}
+
+@font-face {
+    font-family: 'BodoniModa';
+    src: url('./assets/fonts/BodoniModa-ExtraBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hahmlet';
+    src: url('./assets/fonts/Hahmlet-Regular.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+.hometextline {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    letter-spacing: 20px;
+}
+
+.homebutton {
+    position: absolute;
+    display: flex;
+    z-index: 8;
+    letter-spacing: 20px;
+    background-color:#abafac;
+    align-items: center;
+    justify-content: center;
+}
+
+.hometextlengthline {
+    position: absolute;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeinclinationtext {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+}
+
+.typing-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "BodoniModa";
+  font-size: 3rem;
+  color: black;
+  text-align: center;
+  z-index: 999;
+}
+
+.typing-text {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  display: inline-block;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* ✅ 타이핑 후 UI가 페이드인 되는 효과 */
+.fade-in {
+  opacity: 0;
+  animation: fadeInEffect 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
