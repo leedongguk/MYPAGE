@@ -2,39 +2,43 @@ import React, { useState } from "react";
 import "../App.css";
 import useResize from "../components/resize/useResize"; // ✅ 만든 훅 불러오기
 import TypingEffect from "../components/TypingEffect"; // ✅ 타이핑 효과 컴포넌트 추가
+import { useNavigate } from "react-router-dom";
 
-const HomeScreen: React.FC = () => {
+const HomeScreen = () => {
   const size = useResize(); // ✅ 현재 화면 크기 가져오기
   const [showContent, setShowContent] = useState(false); // ✅ 나머지 UI 표시 여부
 
+  const navigate = useNavigate(); // ✅ 네비게이션 함수
+
+    const handleNavigate = () => {
+      navigate("/aboutme"); // ✅ AboutMeScreen으로 이동
+    };
+
   // ✅ 화면 크기에 맞게 폰트 크기 및 자간 조절
-  const fontSize = Math.max(size.width * 0.08, 50); // 화면 너비의 10%, 최소 50px
-  const fontSize2 = Math.max(size.width * 0.01, 11); // 화면 너비의 10%, 최소 50px
-  const fontSize3 = Math.max(size.width * 0.007, 11); // 화면 너비의 10%, 최소 50px
-  const letterSpacing = Math.max(size.width * 0.005, 2); // 너비의 0.5%, 최소 2px
+  const fontSize = Math.max(size.width * 0.08, 50);
+  const fontSize2 = Math.max(size.width * 0.01, 11);
+  const fontSize3 = Math.max(size.width * 0.007, 11);
+  const letterSpacing = Math.max(size.width * 0.005, 2);
 
   // ✅ 화면 크기에 맞춰 동적으로 위치 조절
-  const topTextTop = size.height * 0.04; // 사진 위 간격
-  const bottomTextTop = size.height * 0.75; // 사진 아래 간격
+  const topTextTop = size.height * 0.04;
+  const bottomTextTop = size.height * 0.75;
 
   return (
     <div className="homebackground">
       {!showContent ? (
-        // ✅ 타이핑 애니메이션
         <div className="typing-container">
-            <TypingEffect
-              text={"HEELLO WORLD!"}
-              speed={100}
-              onComplete={() => {
-                console.log("Typing animation complete"); // ✅ 디버깅용 로그 추가
-                console.log("Final text:", "Welcome to GGUK'S HOMEPAGE");
-                setShowContent(true);
-              }}
-            />
+          <TypingEffect
+            text={"HEELLO WORLD!"}
+            speed={100}
+            onComplete={() => {
+              console.log("Typing animation complete");
+              console.log("Final text:", "Welcome to GGUK'S HOMEPAGE");
+              setShowContent(true);
+            }}
+          />
         </div>
-
       ) : (
-        // ✅ 타이핑 후 나머지 UI 페이드인
         <div className={`centerlayout ${showContent ? "fade-in" : ""}`} style={{
           width: size.width * 0.6,
           height: size.height * 1.0,
@@ -59,7 +63,7 @@ const HomeScreen: React.FC = () => {
               writingMode: "vertical-rl",
               textOrientation: "upright",
             }}>
-              My Life Is Wet
+              My LIFE IS WET
             </h1>
           </div>
 
@@ -97,11 +101,11 @@ const HomeScreen: React.FC = () => {
             </h1>
           </div>
 
+          {/* 가운데 사진 */}
           <div className="homecenter" style={{
                 width: size.width * 0.25,
                 height: size.height * 0.6,
-                }}>
-          </div>
+                }}></div>
 
           {/* 오른쪽 글씨 */}
           <div className="hometextlengthline" style={{
@@ -137,21 +141,25 @@ const HomeScreen: React.FC = () => {
             </h1>
           </div>
 
-          <div className="homepath" style={{
+          <div className="homepaths" style={{
             width: size.width * 0.10,
             height: size.height * 0.10,
             left: "73%",
             top: "85%",
-          }}>
-          </div>
+          }}></div>
 
           <div className="vertical-line" style={{ left: "99%" }}></div>
           <div className="horizontal-line" style={{ width: size.width * 0.7, top: "92.5%" }}></div>
-          <div className="homebutton" style={{
-            width: size.width * 0.7,
-            height: size.height * 0.075,
-            top: "92.5%",
-          }}>
+          {/* Homebutton 클릭 시 AboutMeScreen으로 이동 */}
+          <div className="homebutton"
+               style={{
+                 width: size.width * 0.7,
+                 height: size.height * 0.075,
+                 top: "92.5%",
+                 cursor: "pointer" // ✅ 클릭 가능하도록 커서 변경
+               }}
+               onClick={handleNavigate} // ✅ 클릭 이벤트 추가
+          >
             <h1 style={{
               fontFamily: "BodoniModa",
               fontSize: `${fontSize2}px`,

@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'BodoniModa';
+    src: url('../assets/fonts/BodoniModa-ExtraBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hahmlet';
+    src: url('../assets/fonts/Hahmlet-Regular.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rondal';
+    src: url('../assets/fonts/Rondal-Bold.otf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rondal-Semibold';
+    src: url('../assets/fonts/Rondal-Semibold.otf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@keyframes vertical-scroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.homebackground {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/image/home/BACK.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    overflow: hidden;
+}
+
+.aboutnmearea {
+    position: absolute;
+    display: flex;
+    z-index: 8;
+    background-color:#dfdfd5;
+    border-radius: 60px;
+}
+
+.horizontal-line {
+    height: 0.3px; /* ✅ 선 두께 */
+    background-color: black; /* ✅ 선 색상 */
+    position: absolute; /* ✅ 위치 조정 */
+    z-index:9;
+}
+
+.hometextlengthline {
+    position: absolute;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+      overflow: hidden;
+}
+
+.vertical-line {
+    width: 0.3px; /* ✅ 세로선 두께 */
+    background-color: black; /* ✅ 선 색상 */
+    position: absolute; /* ✅ 위치 조정 */
+    transform: scaleX(0.3);
+    z-index:22;
+}
+
+.vertical-text {
+    font-family: "Rondal";
+    color: white;
+
+    /* ✅ 세로 모드 유지 */
+    writing-mode: vertical-rl;
+
+    /* ✅ 왼쪽으로 90도 기울이기 */
+    display: inline-block;
+    transform: rotate(-90deg);
+    transform-origin: center;
+
+    /* ✅ 부드러운 애니메이션 */
+    animation: vertical-scroll 4s linear infinite;
+}
+
+.homepath {
+        background-image: url('../assets/image/aboutme/sideback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        position: fixed;
+        z-index: 2;
+}
+
+.aboutmetext {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    z-index: 8;
+}
+
+.techarea {
+    position: absolute;
+    display: flex; /* 👉 가로로 정렬 */
+    align-items: center;
+    justify-content: space-between; /* 👉 요소들 사이 간격 조절 */
+    z-index: 10;
+    gap: 10px; /* 👉 요소 사이 여백 */
+}
+
+.tech1 {
+        background-image: url('../assets/image/aboutme/003.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 2;
+        position: absolute; /* 👉 부모 요소 기준으로 배치 */
+        transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.tech2 {
+        background-image: url('../assets/image/aboutme/004.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        z-index: 2;
+        position: absolute; /* 👉 부모 요소 기준으로 배치 */
+        transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.tech3 {
+        background-image: url('../assets/image/aboutme/005.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        z-index: 2;
+        position: absolute; /* 👉 부모 요소 기준으로 배치 */
+        transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.tech4 {
+        background-image: url('../assets/image/aboutme/006.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        z-index: 2;
+        position: absolute; /* 👉 부모 요소 기준으로 배치 */
+        transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.tech5 {
+        background-image: url('../assets/image/aboutme/007.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        z-index: 2;
+        position: absolute; /* 👉 부모 요소 기준으로 배치 */
+        transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+.tech1:hover,
+.tech2:hover,
+.tech3:hover,
+.tech4:hover,
+.tech5:hover {
+    transform: scale(1.2); /* 마우스 올리면 1.2배 확대 */
+}

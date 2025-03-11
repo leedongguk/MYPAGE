@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Sunflower-Medium';
+    src: url('../assets/fonts/Sunflower-Medium.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sunflower-Light';
+    src: url('../assets/fonts/Sunflower-Light.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.timeline-container {
+    text-align: center;
+    font-family: 'Sunflower-Medium';
+    background-color: #F5F3EF;
+    overflow: hidden;
+    height: 100vh;
+    position: relative; /* 부모 요소 */
+    padding-top: 0vw; /* TIMELINE 제목 높이만큼 여백 추가 */
+}
+
+/* 🔹 TIMELINE 제목 */
+.timeline-title {
+    font-size: 9vw;
+    font-weight: bold;
+    letter-spacing: 0.5vw;
+    color: #2f3239;
+    top: 0; /* 맨 위에 고정 */
+    white-space: nowrap; /* 글자가 줄바꿈되지 않도록 설정 */
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+/* 🔹 슬라이드 버튼을 TIMELINE 양옆에 배치 */
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2vw; /* 버튼 크기 */
+    cursor: pointer;
+    position: absolute;
+    top: 100px; /* TIMELINE 글씨 높이에 맞게 조정 */
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #2f3239;
+}
+
+/* 왼쪽 화살표 */
+.left-arrow {
+    left: 5vw; /* TIMELINE 왼쪽으로 이동 */
+}
+
+/* 오른쪽 화살표 */
+.right-arrow {
+    right: 5vw; /* TIMELINE 오른쪽으로 이동 */
+}
+
+.arrow.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* 🔹 슬라이드 전체 컨테이너 */
+.timeline-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 78%;
+    margin: 0 auto;
+    top: 10%;
+}
+
+.timeline-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.timeline-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.timeline-item {
+    text-align: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: bold;
+    font-size: 0.9vw;
+    position: relative;
+    background-color: inherit; /* 왼쪽 색상 (timelineData에서 설정한 색 유지) */
+}
+
+.timeline-header::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 75%; /* 오른쪽 40% 배경 */
+    height: 100%;
+    background-color: #F5F3EF; /* 오른쪽 배경을 F5F3EF로 설정 */
+}
+
+
+.timeline-year {
+    position: relative;
+    z-index: 2;
+    padding-right: 1vw;
+    font-family: 'Sunflower-Light';
+}
+
+.timeline-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-image img:hover {
+    transform: scale(1.1);
+}
+
+.timeline-text {
+    font-size: 1vw;
+    color: #555;
+    margin-top: 1vw;
+}
+
+/* 푸터를 화면 하단에 고정 */
+.timeline-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1vw;
+    color: #777;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.hover-image {
+    position: absolute;
+    pointer-events: none;
+    width: 600px; /* 🔥 이미지 크기 줄임 */
+    height: 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 999;
+}
+
+.hover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

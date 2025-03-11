@@ -29,7 +29,7 @@
         justify-content: center;
 }
 
-.homepath {
+.homepaths {
         background-image: url('./assets/image/home/path.png');
         background-size: cover;
         background-repeat: no-repeat;
@@ -70,6 +70,12 @@
     font-style: normal;
 }
 
+@keyframes breathingText {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; } /* ✅ 살짝 커지면서 흐려짐 */
+  100% { transform: scale(1); opacity: 1; }
+}
+
 .hometextline {
     position: absolute;
     display: flex;
@@ -77,6 +83,13 @@
     justify-content: center;
     z-index: 10;
     letter-spacing: 20px;
+    animation: breathingText 2s infinite ease-in-out;
+}
+
+@keyframes blinkButton {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
 }
 
 .homebutton {
